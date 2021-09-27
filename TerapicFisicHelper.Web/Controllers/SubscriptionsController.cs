@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using TerapicFisicHelper.Data;
 using TerapicFisicHelper.Entities;
 using TerapicFisicHelper.Web.Models;
@@ -23,6 +24,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/Subscriptions
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener su plan de subscripcion")]
         [HttpGet]
         public async Task<IEnumerable<SubscriptionModel>> GetSubscriptions()
         {
@@ -38,6 +40,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // POST: api/Subscriptions
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario crear una subscripcion a los planes existentes")]
         [HttpPost]
         public async Task<IActionResult> PostSubscription([FromBody] CreateSubscriptionModel model)
         {
@@ -67,6 +70,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // DELETE: api/Subscriptions/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario eliminar su subscripcion mediante su id")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSubscription([FromRoute] int id)
         {
@@ -89,6 +93,7 @@ namespace TerapicFisicHelper.Web.Controllers
             return Ok();
         }
 
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener su subscripcion mediante su id")]
         [HttpGet("customers/{customerId}")]
         public async Task<IActionResult> GetAllByCustomerId(int customerId)
         {
@@ -107,6 +112,7 @@ namespace TerapicFisicHelper.Web.Controllers
             });
         }
 
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener su subscripcion mediante el id")]
         [HttpGet("plans/{subscriptionPlanId}")]
         public async Task<IActionResult> GetAllBySubscriptionPlanId(int subscriptionPlanId)
         {

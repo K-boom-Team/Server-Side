@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using TerapicFisicHelper.Data;
 using TerapicFisicHelper.Entities;
 using TerapicFisicHelper.Web.Models;
@@ -23,6 +24,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/SubscriptionPlans
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener el ultimo plan de subscripcion creado")]
         [HttpGet]
         public async Task<IEnumerable<SubscriptionPlanModel>> GetSubscriptionPlans()
         {
@@ -37,27 +39,8 @@ namespace TerapicFisicHelper.Web.Controllers
             });
         }
 
-        // GET: api/SubscriptionPlans/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetSubscriptionPlanById([FromRoute] int id)
-        {
-            var subscriptionPlan = await _context.SubscriptionPlans.FindAsync(id);
-
-            if (subscriptionPlan == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(new SubscriptionPlanModel
-            {
-                Id = subscriptionPlan.Id,
-                Name = subscriptionPlan.Name,
-                Description = subscriptionPlan.Description,
-                Cost = subscriptionPlan.Cost
-            });
-        }
-
         // POST: api/SubscriptionPlans
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario inscribirse a los diversos planes de la aplicación")]
         [HttpPost]
         public async Task<IActionResult> PostSubscriptionPlan([FromBody] CreateSubscriptionPlanModel model)
         {
@@ -84,7 +67,29 @@ namespace TerapicFisicHelper.Web.Controllers
             return Ok();
         }
 
+        // GET: api/SubscriptionPlans/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener un plan de subscripcion segun su id")]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetSubscriptionPlanById([FromRoute] int id)
+        {
+            var subscriptionPlan = await _context.SubscriptionPlans.FindAsync(id);
+
+            if (subscriptionPlan == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(new SubscriptionPlanModel
+            {
+                Id = subscriptionPlan.Id,
+                Name = subscriptionPlan.Name,
+                Description = subscriptionPlan.Description,
+                Cost = subscriptionPlan.Cost
+            });
+        }
+
         // PUT: api/SubscriptionPlans/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar un plan de subscripcion")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSubscriptionPlan([FromBody] UpdateSubscriptionPlanModel model)
         {
@@ -115,6 +120,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // DELETE: api/SubscriptionPlans/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario eliminar un plan de subscripcion")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSubscriptionPlan([FromRoute] int id)
         {

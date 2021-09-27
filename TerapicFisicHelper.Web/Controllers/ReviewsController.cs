@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using TerapicFisicHelper.Data;
 using TerapicFisicHelper.Entities;
 using TerapicFisicHelper.Web.Models;
@@ -24,6 +25,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/Reviews
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener la ultima review realizada")]
         [HttpGet]
         public async Task<IEnumerable<ReviewModel>> GetReviews()
         {
@@ -39,6 +41,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // POST: api/Reviews
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario crear una review de las sesiones")]
         [HttpPost]
         public async Task<IActionResult> PostReview([FromBody] CreateReviewModel model)
         {
@@ -67,6 +70,8 @@ namespace TerapicFisicHelper.Web.Controllers
             return Ok();
         }
 
+        // GET: api/Reviews/customerId
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener una review segun el id de un cliente")]
         [HttpGet("customers/{customerId}")]
         public async Task<IActionResult> GetAllByCustomerId(int customerId)
         {
@@ -85,6 +90,8 @@ namespace TerapicFisicHelper.Web.Controllers
             });
         }
 
+        // GET: api/Reviews/sessionId
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener una review segun el id de la sesion donde se realizó")]
         [HttpGet("specialists/{specialistId}")]
         public async Task<IActionResult> GetAllBySpecialistId(int specialistId)
         {

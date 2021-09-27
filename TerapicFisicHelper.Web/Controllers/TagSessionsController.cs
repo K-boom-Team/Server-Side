@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using TerapicFisicHelper.Data;
 using TerapicFisicHelper.Entities;
 using TerapicFisicHelper.Web.Models;
@@ -24,6 +25,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/TagSessions
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener las etiquetas de su ultima sesion")]
         [HttpGet]
         public async Task<IEnumerable<TagSessionModel>> GetTagSessions()
         {
@@ -37,6 +39,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // POST: api/TagSessions
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario crear eitquetas dirigidas a sesiones")]
         [HttpPost]
         public async Task<IActionResult> PostTagSession(CreateTagSessionModel model)
         {
@@ -62,6 +65,7 @@ namespace TerapicFisicHelper.Web.Controllers
             return Ok();
         }
 
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener las etiquetas a una sesión segun el id de la sesion")]
         [HttpGet("sessions/{sessionId}")]
         public async Task<IActionResult> GetAllBySessionIdAsync(int sessionId)
         {
@@ -84,6 +88,7 @@ namespace TerapicFisicHelper.Web.Controllers
             });
         }
 
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener una etiqueta de una sesion segun su id")]
         [HttpGet("tags/{tagId}")]
         public async Task<IActionResult> GetAllByTagIdAsync(int tagId)
         {

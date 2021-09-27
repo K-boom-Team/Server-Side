@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace TerapicFisicHelper.Web.Controllers
             _context = context;
         }
 
+        [SwaggerOperation(Summary = "Esta ruta permite al usuario obtener la sesion segun el id de un especialista")]
         [HttpGet]
         public async Task<IActionResult> GetAllBySpecialistIdAsync(int specialistId)
         {

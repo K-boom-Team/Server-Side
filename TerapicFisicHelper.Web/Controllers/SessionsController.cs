@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using TerapicFisicHelper.Data;
 using TerapicFisicHelper.Entities;
 using TerapicFisicHelper.Web.Models;
@@ -23,6 +24,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/Sessions
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener su ultima sesion")]
         [HttpGet]
         public async Task<IEnumerable<SessionModel>> GetSessions()
         {
@@ -40,30 +42,8 @@ namespace TerapicFisicHelper.Web.Controllers
             });
         }
 
-        // GET: api/Sessions/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetSessionById(int id)
-        {
-            var session = await _context.Sessions.FindAsync(id);
-
-            if (session == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(new SessionModel
-            {
-                Id = session.Id,
-                SpecialistId = session.SpecialistId,
-                Title = session.Title,
-                Description = session.Description,
-                StartDate = session.StartDate,
-                StartHour = session.StartHour,
-                EndHour = session.EndHour
-            });
-        }
-
         // POST: api/Sessions
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario crear una sesion")]
         [HttpPost]
         public async Task<IActionResult> PostSession([FromBody] CreateSessionModel model)
         {
@@ -94,7 +74,33 @@ namespace TerapicFisicHelper.Web.Controllers
             return Ok();
         }
 
+        // GET: api/Sessions/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener una sesion segun su id")]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetSessionById(int id)
+        {
+            var session = await _context.Sessions.FindAsync(id);
+
+            if (session == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(new SessionModel
+            {
+                Id = session.Id,
+                SpecialistId = session.SpecialistId,
+                Title = session.Title,
+                Description = session.Description,
+                StartDate = session.StartDate,
+                StartHour = session.StartHour,
+                EndHour = session.EndHour
+            });
+        }
+
+
         // PUT: api/Sessions/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar una sesion")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSession([FromBody] UpdateSessionModel model)
         {
@@ -128,6 +134,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // DELETE: api/Sessions/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario eliminar una sesion segun su id")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSession([FromRoute] int id)
         {

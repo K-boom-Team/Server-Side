@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using TerapicFisicHelper.Data;
 using TerapicFisicHelper.Entities;
 using TerapicFisicHelper.Web.Models;
@@ -24,6 +25,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/Customers
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener su descripción como cliente ")]
         [HttpGet]
         public async Task<IEnumerable<CustomerModel>> GetCustomers()
         {
@@ -37,26 +39,8 @@ namespace TerapicFisicHelper.Web.Controllers
             });
         }
 
-        // GET: api/Customers/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetCustomerById([FromRoute] int id)
-        {
-            var cust = await _context.Customers.FindAsync(id);
-
-            if (cust == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(new CustomerModel
-            {
-                Id = cust.Id,
-                Description = cust.Description,
-                UserId = cust.UserId
-            });
-        }
-
         // POST: api/Customers
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario crear una descripción de un cliente ")]
         [HttpPost]
         public async Task<IActionResult> PostCustomer([FromBody] CreateCustomerModel model)
         {
@@ -83,7 +67,28 @@ namespace TerapicFisicHelper.Web.Controllers
             return Ok();
         }
 
+        // GET: api/Customers/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener una descripción de un cliente segun su id")]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCustomerById([FromRoute] int id)
+        {
+            var cust = await _context.Customers.FindAsync(id);
+
+            if (cust == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(new CustomerModel
+            {
+                Id = cust.Id,
+                Description = cust.Description,
+                UserId = cust.UserId
+            });
+        }
+
         // PUT: api/Customers/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar una descripción de un cliente ")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCustomer([FromBody] UpdateCustomerModel model)
         {
@@ -113,6 +118,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // DELETE: api/Customers/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario eliminar una descripción de un cliente")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCustomer([FromRoute] int id)
         {

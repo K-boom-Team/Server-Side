@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using TerapicFisicHelper.Data;
 using TerapicFisicHelper.Entities;
 using TerapicFisicHelper.Web.Models;
@@ -24,6 +25,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/EquipamentSessions
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener la herramienta de una sesion")]
         [HttpGet]
         public async Task<IEnumerable<EquipamentSessionModel>> GetEquipamentSessions()
         {
@@ -37,6 +39,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // POST: api/EquipamentSessions
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario crear la herramienta de una sesion")]
         [HttpPost]
         public async Task<IActionResult> PostEquipamentSession([FromBody] CreateEquipamentSessionModel model)
         {
@@ -63,30 +66,8 @@ namespace TerapicFisicHelper.Web.Controllers
             return Ok();
         }
 
-        // DELETE: api/EquipamentSessions/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteEquipamentSession([FromRoute] int id)
-        {
-            var equipamentSession = await _context.EquipamentSessions.FindAsync(id);
-
-            if (equipamentSession == null)
-                return NotFound();
-
-            _context.EquipamentSessions.Remove(equipamentSession);
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-
-            return Ok();
-        }
-
         // GET: api/sessions/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener la herramienta de una sesion segun su id")]
         [HttpGet("sessions/{sessionId}")]
         public async Task<IActionResult> GetAllBySessionId([FromRoute] int sessionId)
         {
@@ -109,7 +90,32 @@ namespace TerapicFisicHelper.Web.Controllers
             });
         }
 
+        // DELETE: api/EquipamentSessions/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario eliminar la herramienta de una sesion segun su id")]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEquipamentSession([FromRoute] int id)
+        {
+            var equipamentSession = await _context.EquipamentSessions.FindAsync(id);
+
+            if (equipamentSession == null)
+                return NotFound();
+
+            _context.EquipamentSessions.Remove(equipamentSession);
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Ok();
+        }
+
         // GET: api/equipaments/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener la sesion segun el id de una herramienta")]
         [HttpGet("equipaments/{equipamentId}")]
         public async Task<IActionResult> GetAllByEquipamentId([FromRoute] int equipamentId)
         {

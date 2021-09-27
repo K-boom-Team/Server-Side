@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using TerapicFisicHelper.Data;
 using TerapicFisicHelper.Entities;
 using TerapicFisicHelper.Web.Models;
@@ -24,6 +25,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/Tags
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener sus eiquetas")]
         [HttpGet]
         public async Task<IEnumerable<TagModel>> GetTags()
         {
@@ -37,26 +39,8 @@ namespace TerapicFisicHelper.Web.Controllers
             });
         }
 
-        // GET: api/Tags/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetTagById([FromRoute] int id)
-        {
-            var tag = await _context.Tags.FindAsync(id);
-
-            if (tag == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(new TagModel
-            {
-                Id = tag.Id,
-                Name = tag.Name,
-                Description = tag.Description
-            });
-        }
-
         // POST: api/Tags
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario crear etiquetas")]
         [HttpPost]
         public async Task<IActionResult> PostTag([FromBody] CreateTagModel model)
         {
@@ -83,7 +67,28 @@ namespace TerapicFisicHelper.Web.Controllers
             return Ok();
         }
 
+        // GET: api/Tags/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario crear etiquetas segun el id del usuario")]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetTagById([FromRoute] int id)
+        {
+            var tag = await _context.Tags.FindAsync(id);
+
+            if (tag == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(new TagModel
+            {
+                Id = tag.Id,
+                Name = tag.Name,
+                Description = tag.Description
+            });
+        }
+
         // PUT: api/Tags/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar una etiqueta segun su id")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTag([FromBody] UpdateTagModel model)
         {
@@ -113,6 +118,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // DELETE: api/Tags/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario eliminar etiquetas segun su id")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTag([FromRoute] int id)
         {

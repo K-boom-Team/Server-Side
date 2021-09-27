@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using TerapicFisicHelper.Data;
 using TerapicFisicHelper.Entities;
 using TerapicFisicHelper.Web.Models;
@@ -24,6 +25,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/Histories
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener los historiales creados")]
         [HttpGet]
         public async Task<IEnumerable<HistoryModel>> GetHistories()
         {
@@ -38,6 +40,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // POST: api/Histories
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario crear un historial")]
         [HttpPost]
         public async Task<IActionResult> PostHistory([FromBody] CreateHistoryModel model)
         {
@@ -66,6 +69,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/customers/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener un historial segun el id de los clientes participantes en la session")]
         [HttpGet("customers/{customerId}")]
         public async Task<IActionResult> GetAllByCustomerId([FromRoute] int customerId)
         {
@@ -84,7 +88,8 @@ namespace TerapicFisicHelper.Web.Controllers
             });
         }
 
-        // GET: api/customers/5
+        // GET: api/session/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener un historial segun el id de la session")]
         [HttpGet("sessions/{sessionId}")]
         public async Task<IActionResult> GetAllBySessionId([FromRoute] int sessionId)
         {

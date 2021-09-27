@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/Users
+        [SwaggerOperation(Summary = "Esta ruta permite al usuario leer su informacion")]
         [HttpGet]
         public async Task<IEnumerable<UserModel>> GetUsers()
         {
@@ -44,35 +46,9 @@ namespace TerapicFisicHelper.Web.Controllers
                 Password = c.Password
             });
         }
-        // GET: api/Users/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserById([FromRoute] int id)
-        {
-            var user = await _context.Users.FindAsync(id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(new UserModel
-            {
-                Id = user.Id,
-                Name = user.Name,
-                LastName = user.LastName,
-                Description = user.Description,
-                Birth = user.Birth,
-                Address = user.Address,
-                Phone = user.Phone,
-                Age = user.Age,
-                Email = user.Email,
-                Country = user.Country,
-                Gender = user.Gender,
-                Password = user.Password
-            });
-        }
 
         // POST: api/Users
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario crear su perfil")]
         [HttpPost]
         public async Task<IActionResult> PostUser([FromBody] CreateUserModel model)
         {
@@ -108,7 +84,37 @@ namespace TerapicFisicHelper.Web.Controllers
             return Ok();
         }
 
+        // GET: api/Users/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener la informacion de un perfil segun el id")]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById([FromRoute] int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(new UserModel
+            {
+                Id = user.Id,
+                Name = user.Name,
+                LastName = user.LastName,
+                Description = user.Description,
+                Birth = user.Birth,
+                Address = user.Address,
+                Phone = user.Phone,
+                Age = user.Age,
+                Email = user.Email,
+                Country = user.Country,
+                Gender = user.Gender,
+                Password = user.Password
+            });
+        }
+
         // PUT: api/Users/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar la informacion de un perfil segun el id")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser([FromBody] UpdateUserModel model)
         {
@@ -147,6 +153,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // DELETE: api/Users/5
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario eliminar un perfil segun su id")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser([FromRoute] int id)
         {

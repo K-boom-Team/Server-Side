@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using TerapicFisicHelper.Data;
 using TerapicFisicHelper.Entities;
 using TerapicFisicHelper.Web.Models;
@@ -24,6 +25,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // GET: api/Specialists
+        [SwaggerOperation(Summary = "Esta ruta permite a un usuario obtener la credencial de especialista")]
         [HttpGet]
         public async Task<IEnumerable<SpecialistModel>> GetSpecialists()
         {
@@ -37,26 +39,8 @@ namespace TerapicFisicHelper.Web.Controllers
             });
         }
 
-        // GET: api/Specialists/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetSpecialistById([FromRoute] int id)
-        {
-            var spec = await _context.Specialists.FindAsync(id);
-
-            if (spec == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(new SpecialistModel
-            {
-                Id = spec.Id,
-                Specialty = spec.Specialty,
-                UserId = spec.UserId
-            });
-        }
-
         // POST: api/Specialists
+        [SwaggerOperation(Summary = "Esta ruta permite crear la credencial de especialista a un usuario")]
         [HttpPost]
         public async Task<IActionResult> PostSpecialist([FromBody] CreateSpecialistModel model)
         {
@@ -83,7 +67,28 @@ namespace TerapicFisicHelper.Web.Controllers
             return Ok();
         }
 
+        // GET: api/Specialists/5
+        [SwaggerOperation(Summary = "Esta ruta permite obtener la credencial de especialista a un usuario segun su id")]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetSpecialistById([FromRoute] int id)
+        {
+            var spec = await _context.Specialists.FindAsync(id);
+
+            if (spec == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(new SpecialistModel
+            {
+                Id = spec.Id,
+                Specialty = spec.Specialty,
+                UserId = spec.UserId
+            });
+        }
+
         // PUT: api/Specialists/5
+        [SwaggerOperation(Summary = "Esta ruta permite actualizar la credencial de especialista a un usuario")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSpecialist([FromBody] UpdateSpecialistModel model)
         {
@@ -113,6 +118,7 @@ namespace TerapicFisicHelper.Web.Controllers
         }
 
         // DELETE: api/Specialists/5
+        [SwaggerOperation(Summary = "Esta ruta permite borrar la credencial de especialista a un usuario")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSpecialist([FromRoute] int id)
         {
