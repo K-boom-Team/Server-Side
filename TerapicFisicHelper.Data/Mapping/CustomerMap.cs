@@ -14,7 +14,8 @@ namespace TerapicFisicHelper.Data.Mapping
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.ToTable("customers");
-            builder.HasKey(c => c.Id);
+            //builder.HasKey(c => c.Id);
+            builder.HasKey(c => c.UserId);
             builder.Property(c => c.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Property(c => c.Description).IsRequired().HasMaxLength(255);
         }

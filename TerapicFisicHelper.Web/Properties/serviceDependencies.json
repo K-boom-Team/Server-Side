@@ -2,7 +2,7 @@
   "dependencies": {
     "mssql1": {
       "type": "mssql",
-      "connectionId": "LAPTOP-1LEAIUDF.database.windows.net"
+      "connectionId": "DESKTOP-AHN19NE.database.windows.net"
     }
   }
 }

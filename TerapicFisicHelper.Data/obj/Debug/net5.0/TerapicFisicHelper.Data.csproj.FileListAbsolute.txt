@@ -16,3 +16,21 @@ C:\Users\Diego\Downloads\Server-Side-main\TerapicFisicHelper.Data\obj\Debug\net5
 C:\Users\Diego\Downloads\Server-Side-main\TerapicFisicHelper.Data\obj\Debug\net5.0\ref\TerapicFisicHelper.Data.dll
 C:\Users\Diego\Downloads\Server-Side-main\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.pdb
 C:\Users\Diego\Downloads\Server-Side-main\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.genruntimeconfig.cache
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\bin\Debug\net5.0\TerapicFisicHelper.Data.deps.json
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\bin\Debug\net5.0\TerapicFisicHelper.Data.runtimeconfig.json
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\bin\Debug\net5.0\TerapicFisicHelper.Data.runtimeconfig.dev.json
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\bin\Debug\net5.0\TerapicFisicHelper.Data.dll
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\bin\Debug\net5.0\ref\TerapicFisicHelper.Data.dll
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\bin\Debug\net5.0\TerapicFisicHelper.Data.pdb
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\bin\Debug\net5.0\TerapicFisicHelper.Entities.dll
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\bin\Debug\net5.0\TerapicFisicHelper.Entities.pdb
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.csproj.AssemblyReference.cache
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.AssemblyInfoInputs.cache
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.AssemblyInfo.cs
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.csproj.CoreCompileInputs.cache
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.csproj.CopyComplete
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.dll
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\obj\Debug\net5.0\ref\TerapicFisicHelper.Data.dll
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.pdb
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Data\obj\Debug\net5.0\TerapicFisicHelper.Data.genruntimeconfig.cache

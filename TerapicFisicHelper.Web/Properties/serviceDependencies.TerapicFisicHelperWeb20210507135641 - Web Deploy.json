@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "mssql1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/LAPTOP-1LEAIUDF/databases/DBTerapicFisicHelper",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/DESKTOP-AHN19NE/databases/DBTerapicFisicHelper",
       "type": "mssql.azure",
-      "connectionId": "LAPTOP-1LEAIUDF.database.windows.net",
+      "connectionId": "DESKTOP-AHN19NE.database.windows.net",
       "secretStore": "AzureAppSettings"
     }
   }

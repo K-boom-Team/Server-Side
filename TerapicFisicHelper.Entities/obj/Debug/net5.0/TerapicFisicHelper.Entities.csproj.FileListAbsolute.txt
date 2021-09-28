@@ -10,3 +10,15 @@ C:\Users\Diego\Downloads\Server-Side-main\TerapicFisicHelper.Entities\obj\Debug\
 C:\Users\Diego\Downloads\Server-Side-main\TerapicFisicHelper.Entities\obj\Debug\net5.0\TerapicFisicHelper.Entities.dll
 C:\Users\Diego\Downloads\Server-Side-main\TerapicFisicHelper.Entities\obj\Debug\net5.0\ref\TerapicFisicHelper.Entities.dll
 C:\Users\Diego\Downloads\Server-Side-main\TerapicFisicHelper.Entities\obj\Debug\net5.0\TerapicFisicHelper.Entities.pdb
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\bin\Debug\net5.0\TerapicFisicHelper.Entities.deps.json
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\bin\Debug\net5.0\TerapicFisicHelper.Entities.dll
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\bin\Debug\net5.0\ref\TerapicFisicHelper.Entities.dll
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\bin\Debug\net5.0\TerapicFisicHelper.Entities.pdb
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\obj\Debug\net5.0\TerapicFisicHelper.Entities.csproj.AssemblyReference.cache
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\obj\Debug\net5.0\TerapicFisicHelper.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\obj\Debug\net5.0\TerapicFisicHelper.Entities.AssemblyInfoInputs.cache
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\obj\Debug\net5.0\TerapicFisicHelper.Entities.AssemblyInfo.cs
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\obj\Debug\net5.0\TerapicFisicHelper.Entities.csproj.CoreCompileInputs.cache
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\obj\Debug\net5.0\TerapicFisicHelper.Entities.dll
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\obj\Debug\net5.0\ref\TerapicFisicHelper.Entities.dll
+D:\Trabajo UPC\Ciclo 6\Experimentos ISW\Trabajo\Server-Side\TerapicFisicHelper.Entities\obj\Debug\net5.0\TerapicFisicHelper.Entities.pdb
