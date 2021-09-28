@@ -90,15 +90,15 @@ namespace TerapicFisicHelper.Web.Controllers
         // PUT: api/Tags/5
         [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar una etiqueta segun su id")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTag([FromBody] UpdateTagModel model)
+        public async Task<IActionResult> PutTag(int id, [FromBody] UpdateTagModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (model.Id <= 0)
+            if (id <= 0)
                 return BadRequest();
 
-            var tag = await _context.Tags.FirstOrDefaultAsync(c => c.Id == model.Id);
+            var tag = await _context.Tags.FirstOrDefaultAsync(c => c.Id == id);
 
             if (tag == null)
                 return NotFound();

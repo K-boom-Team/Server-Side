@@ -8,11 +8,6 @@ namespace TerapicFisicHelper.Web.Models
 {
     public class UpdateSessionModel
     {
-        public int Id { get; set; }
-
-        [Required(ErrorMessage = "Debe asignar un especialista a la sesion")]
-        public int SpecialistId { get; set; }
-
         [Required(ErrorMessage = "Debe incluir el titulo de la sesion")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Nombre del titulo debe tener entre 3 a 50 caracteres")]
         public string Title { get; set; }

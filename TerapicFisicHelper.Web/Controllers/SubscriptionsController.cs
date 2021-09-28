@@ -71,10 +71,10 @@ namespace TerapicFisicHelper.Web.Controllers
 
         // DELETE: api/Subscriptions/5
         [SwaggerOperation(Summary = "Esta ruta permite a un usuario eliminar su subscripcion mediante su id")]
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSubscription([FromRoute] int id)
+        [HttpDelete("{customerId}/{subscriptionPlanId}")]
+        public async Task<IActionResult> DeleteSubscription([FromRoute] int customerId, int subscriptionPlanId)
         {
-            var subscription = await _context.Subscriptions.FindAsync(id);
+            var subscription = await _context.Subscriptions.FindAsync(customerId, subscriptionPlanId);
 
             if (subscription == null)
                 return NotFound();

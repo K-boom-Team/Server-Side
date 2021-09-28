@@ -92,10 +92,10 @@ namespace TerapicFisicHelper.Web.Controllers
 
         // DELETE: api/EquipamentSessions/5
         [SwaggerOperation(Summary = "Esta ruta permite a un usuario eliminar la herramienta de una sesion segun su id")]
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteEquipamentSession([FromRoute] int id)
+        [HttpDelete("{equipamentId}/{sessionId}")]
+        public async Task<IActionResult> DeleteEquipamentSession([FromRoute] int equipamentId, int sessionId)
         {
-            var equipamentSession = await _context.EquipamentSessions.FindAsync(id);
+            var equipamentSession = await _context.EquipamentSessions.FindAsync(equipamentId, sessionId);
 
             if (equipamentSession == null)
                 return NotFound();

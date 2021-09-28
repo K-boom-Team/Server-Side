@@ -8,8 +8,6 @@ namespace TerapicFisicHelper.Web.Models
 {
     public class UpdateTagModel
     {
-        public int Id { get; set; }
-
         [Required(ErrorMessage = "Debe incluir el nombre del Tag")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Nombre del Tag debe tener entre 3 a 50 caracteres")]
         public string Name { get; set; }

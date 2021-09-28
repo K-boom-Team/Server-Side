@@ -91,15 +91,15 @@ namespace TerapicFisicHelper.Web.Controllers
         // PUT: api/SubscriptionPlans/5
         [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar un plan de subscripcion")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSubscriptionPlan([FromBody] UpdateSubscriptionPlanModel model)
+        public async Task<IActionResult> PutSubscriptionPlan(int id, [FromBody] UpdateSubscriptionPlanModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (model.Id <= 0)
+            if (id <= 0)
                 return BadRequest();
 
-            var subscriptionPlan = await _context.SubscriptionPlans.FirstOrDefaultAsync(c => c.Id == model.Id);
+            var subscriptionPlan = await _context.SubscriptionPlans.FirstOrDefaultAsync(c => c.Id == id);
 
             if (subscriptionPlan == null)
                 return NotFound();

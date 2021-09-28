@@ -90,21 +90,20 @@ namespace TerapicFisicHelper.Web.Controllers
         // PUT: api/Customers/5
         [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar una descripción de un cliente ")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomer([FromBody] UpdateCustomerModel model)
+        public async Task<IActionResult> PutCustomer(int id, [FromBody] UpdateCustomerModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (model.Id <= 0)
+            if (id <= 0)
                 return BadRequest();
 
-            var cust = await _context.Customers.FirstOrDefaultAsync(c => c.Id == model.Id);
+            var cust = await _context.Customers.FirstOrDefaultAsync(c => c.Id == id);
 
             if (cust == null)
                 return NotFound();
 
             cust.Description = model.Description;
-            cust.UserId = model.UserId;
 
             try
             {

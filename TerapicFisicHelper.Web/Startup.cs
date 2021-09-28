@@ -26,16 +26,16 @@ namespace TerapicFisicHelper.Web
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
+                c.EnableAnnotations();
                 c.SwaggerDoc("v1", new OpenApiInfo { 
                     Title = "TerapicFisicHelper.Web",
                     Version = "v1",
                     Description = "API TerapicFisicHelper del curso Aplicaciones Web con NetCore",
-                    TermsOfService = new Uri("https://github.com/Terapic-Fisic-Helper/Server-Side/tree/develop"),
+                    TermsOfService = new Uri("https://github.com/K-boom-Team/Server-Side"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Grupo EZCODE - TerapicFisicHelper",
-                        Email = "u201621283@upc.edu.pe",
-                        Url = new Uri("https://github.com/Terapic-Fisic-Helper/Server-Side")
+                        Name = "Grupo KBOOM TEAM - TerapicFisicHelper",
+                        Url = new Uri("https://github.com/K-boom-Team/Server-Side")
                     }
                 });
             });

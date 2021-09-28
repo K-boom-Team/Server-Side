@@ -116,15 +116,15 @@ namespace TerapicFisicHelper.Web.Controllers
         // PUT: api/Users/5
         [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar la informacion de un perfil segun el id")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser([FromBody] UpdateUserModel model)
+        public async Task<IActionResult> PutUser(int id, [FromBody] UpdateUserModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (model.Id <= 0)
+            if (id <= 0)
                 return BadRequest();
 
-            var user = await _context.Users.FirstOrDefaultAsync(c => c.Id == model.Id);
+            var user = await _context.Users.FirstOrDefaultAsync(c => c.Id == id);
 
             if (user == null)
                 return NotFound();

@@ -102,20 +102,19 @@ namespace TerapicFisicHelper.Web.Controllers
         // PUT: api/Sessions/5
         [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar una sesion")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSession([FromBody] UpdateSessionModel model)
+        public async Task<IActionResult> PutSession(int id, [FromBody] UpdateSessionModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (model.Id <= 0)
+            if (id <= 0)
                 return BadRequest();
 
-            var session = await _context.Sessions.FirstOrDefaultAsync(c => c.Id == model.Id);
+            var session = await _context.Sessions.FirstOrDefaultAsync(c => c.Id == id);
 
             if (session == null)
                 return NotFound();
 
-            session.SpecialistId = model.SpecialistId;
             session.Title = model.Title;
             session.Description = model.Description;
             session.StartDate = model.StartDate;

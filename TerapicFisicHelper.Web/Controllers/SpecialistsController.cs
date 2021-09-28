@@ -90,21 +90,20 @@ namespace TerapicFisicHelper.Web.Controllers
         // PUT: api/Specialists/5
         [SwaggerOperation(Summary = "Esta ruta permite actualizar la credencial de especialista a un usuario")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSpecialist([FromBody] UpdateSpecialistModel model)
+        public async Task<IActionResult> PutSpecialist(int id, [FromBody] UpdateSpecialistModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (model.Id <= 0)
+            if (id <= 0)
                 return BadRequest();
 
-            var spec = await _context.Specialists.FirstOrDefaultAsync(c => c.Id == model.Id);
+            var spec = await _context.Specialists.FirstOrDefaultAsync(c => c.Id == id);
 
             if (spec == null)
                 return NotFound();
 
             spec.Specialty = model.Specialty;
-            spec.UserId = model.UserId;
 
             try
             {

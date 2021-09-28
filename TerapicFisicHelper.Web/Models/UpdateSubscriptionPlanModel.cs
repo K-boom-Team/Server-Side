@@ -8,8 +8,6 @@ namespace TerapicFisicHelper.Web.Models
 {
     public class UpdateSubscriptionPlanModel
     {
-        public int Id { get; set; }
-
         [Required(ErrorMessage = "Debe incluir el nombre del plan suscripcion")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Nombre del plan de suscripcion debe tener entre 3 a 50 caracteres")]
         public string Name { get; set; }

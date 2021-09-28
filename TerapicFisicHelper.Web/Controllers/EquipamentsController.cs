@@ -91,15 +91,15 @@ namespace TerapicFisicHelper.Web.Controllers
         // PUT: api/Equipaments/5
         [SwaggerOperation(Summary = "Esta ruta permite a un usuario actualizar la herramienta segun su id")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEquipament([FromBody] UpdateEquipamentModel model)
+        public async Task<IActionResult> PutEquipament(int id, [FromBody] UpdateEquipamentModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (model.Id <= 0)
+            if (id <= 0)
                 return BadRequest();
 
-            var equipament = await _context.Equipaments.FirstOrDefaultAsync(c => c.Id == model.Id);
+            var equipament = await _context.Equipaments.FirstOrDefaultAsync(c => c.Id == id);
 
             if (equipament == null)
                 return NotFound();
