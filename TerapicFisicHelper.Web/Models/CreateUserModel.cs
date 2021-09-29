@@ -33,7 +33,7 @@ namespace TerapicFisicHelper.Web.Models
         [StringLength(20, MinimumLength = 3, ErrorMessage = "Genero del usuario debe tener entre 3 a 20 caracteres")]
         public string Gender { get; set; }
         [Required(ErrorMessage = "Debe incluir el password del usuario")]
-        [StringLength(8, ErrorMessage = "Password del usuario debe tener al menos 8 caracteres")]
+        [StringLength(50, MinimumLength = 8, ErrorMessage = "Password del usuario debe tener al menos 8 caracteres")]
         public string Password { get; set; }
     }
 }
