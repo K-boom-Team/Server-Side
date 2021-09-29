@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Selenium\\TerapicFisicHelper.Selenium\\TerapicFisicHelper.Selenium.csproj": {}
+    "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Server-Side\\TerapicFisicHelper.Selenium\\TerapicFisicHelper.Selenium.csproj": {}
   },
   "projects": {
-    "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Selenium\\TerapicFisicHelper.Selenium\\TerapicFisicHelper.Selenium.csproj": {
+    "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Server-Side\\TerapicFisicHelper.Selenium\\TerapicFisicHelper.Selenium.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Selenium\\TerapicFisicHelper.Selenium\\TerapicFisicHelper.Selenium.csproj",
+        "projectUniqueName": "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Server-Side\\TerapicFisicHelper.Selenium\\TerapicFisicHelper.Selenium.csproj",
         "projectName": "TerapicFisicHelper.Selenium",
-        "projectPath": "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Selenium\\TerapicFisicHelper.Selenium\\TerapicFisicHelper.Selenium.csproj",
+        "projectPath": "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Server-Side\\TerapicFisicHelper.Selenium\\TerapicFisicHelper.Selenium.csproj",
         "packagesPath": "C:\\Users\\ASUS TUF\\.nuget\\packages\\",
-        "outputPath": "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Selenium\\TerapicFisicHelper.Selenium\\obj\\",
+        "outputPath": "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Server-Side\\TerapicFisicHelper.Selenium\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS TUF\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,7 +50,7 @@
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[3.17.0, )"
+              "version": "[3.11.1, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
