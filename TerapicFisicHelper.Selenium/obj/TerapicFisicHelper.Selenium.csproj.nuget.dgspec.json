@@ -46,11 +46,11 @@
             },
             "NUnit": {
               "target": "Package",
-              "version": "[3.13.1, )"
+              "version": "[3.12.0, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[3.11.1, )"
+              "version": "[3.12.0, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
