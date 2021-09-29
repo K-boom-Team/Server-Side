@@ -1,0 +1,27 @@
+﻿2021-09-29T16:20:13.0928159-05:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-09-29T16:20:13.0931901-05:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.9.7 in Framework netcore31 in x64 mode execution started
+2021-09-29T16:20:13.0931965-05:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Users\Flores\source\repos\TerapicFisicalHelper.Cucumber\TerapicFisicalHelper.Cucumber\bin\Debug\netcoreapp3.1\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-09-29T16:20:13.0970161-05:00;VSTestExecutionThread;Info;Current UserName: 'Flores', MachineName: 'DESKTOP-5DCDUN5'
+2021-09-29T16:20:13.1487772-05:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Users\Flores\source\repos\TerapicFisicalHelper.Cucumber\TerapicFisicalHelper.Cucumber\bin\Debug\netcoreapp3.1\TerapicFisicalHelper.Cucumber.dll
+2021-09-29T16:20:13.1490320-05:00;VSTestExecutionThread;Info;Output folder configured to "C:\Users\Flores\source\repos\TerapicFisicalHelper.Cucumber\TestResults" (default)
+2021-09-29T16:20:13.1494089-05:00;VSTestExecutionThread;Info;Profile: 
+2021-09-29T16:20:13.2278795-05:00;VSTestExecutionThread;Info;Log file path: C:\Users\Flores\source\repos\TerapicFisicalHelper.Cucumber\TestResults\Unnamed project__2021-09-29T162013.log
+2021-09-29T16:20:13.2336414-05:00;Thread#12;Info;Checking activation
+2021-09-29T16:20:16.6107584-05:00;Thread#12;Error;****************************************************************************************************************
+2021-09-29T16:20:16.6116975-05:00;Thread#12;Error;*                                           SpecFlow+ Runner                                                   *
+2021-09-29T16:20:16.6118148-05:00;Thread#12;Error;****************************************************************************************************************
+2021-09-29T16:20:16.6121624-05:00;Thread#12;Error;Please sign-up for your free SpecFlow account or sign-in with your already existing account here:
+2021-09-29T16:20:16.6123768-05:00;Thread#12;Error;https://account.specflow.org/clientactivation/welcome/Runner/A6D96A77848A4803A7DF130554FFD12CF0BCD6DC55D361B1ACB1859C5DCB22B0F5F0BC8D/NotActivatedYet
+2021-09-29T16:20:16.6125350-05:00;Thread#12;Error;to execute your Scenarios again.
+2021-09-29T16:20:16.6127732-05:00;Thread#12;Error;If you are reading this message on a build agent, we couldn't recognize the agent.
+2021-09-29T16:20:16.6129209-05:00;Thread#12;Error;Please get in touch with us at support@specflow.org.
+2021-09-29T16:20:16.6131407-05:00;Thread#12;Error;****************************************************************************************************************
+2021-09-29T16:20:16.6182569-05:00;Thread#12;Error;No tests executed (activation needed)
+2021-09-29T16:20:16.6433969-05:00:Total: 0
+2021-09-29T16:20:16.6456410-05:00:Succeeded: 0
+2021-09-29T16:20:16.6460228-05:00:Ignored: 0
+2021-09-29T16:20:16.6462501-05:00:Pending: 0
+2021-09-29T16:20:16.6470653-05:00:Skipped: 0
+2021-09-29T16:20:16.6473527-05:00:Failed: 0
+2021-09-29T16:20:16.6525063-05:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+========== End of log file ==========
