@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+	
+    stages {
+        stage ('Clean workspace') {
+               steps {
+                   cleanWs()
+               }
+           }
+        stage ('Checkout code') {
+            steps {
+                git 'https://github.com/Patrick2OL/deploy-example'
+            }
+        }
+            
+        stage ('Restore Nuget') {
+            steps {
+                bat '"D:/Archivos de programas zip/NuGet/nuget.exe" restore TerapicFisicHelper.API.sln'
+            }
+        }
+            
+        stage ('Build') {
+            steps {
+                //bat '"C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" TerapicFisicHelper.API.sln -p:DeployOnBuild=true -p:DeployTarget=Package -p:EnablePackageProcessLoggingAndAssert=true -p:Configuration=Release -p:Platform=\"Any CPU\"'
+                bat 'dotnet build --configuration Release'
+            }
+        }
+            
+        stage ('Test') {
+            steps {
+                bat "dotnet test TerapicFisicHelper.NUnitTest/bin/Debug/net5.0/TerapicFisicHelper.NUnitTest.dll"
+            }
+        }
+            
+        stage ('Package') {
+            steps {
+                //bat "dotnet pack --include-source"
+                echo 'pack'
+            }
+        }
+        stage ('Deployment') {
+            steps {
+                //bat 'copy TerapicFisicHelper.Web/manifest.yml TerapicFisicHelper.Web/bin/Release/net5.0'
+                //pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'ff160e82-ab00-4cf1-afbd-7098e6ec36ed', manifestChoice: [manifestFile: 'TerapicFisicHelper.Web/manifest.yml'], organization: 'u201915402@upc.edu.pe', pluginTimeout: '720', target: 'https://api.us-south.cf.cloud.ibm.com'
+                pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'ff160e82-ab00-4cf1-afbd-7098e6ec36ed', manifestChoice: [appName: 'DeployExample', appPath: '', buildpack: 'dotnet_core_buildpack', command: '', domain: '', hostname: 'DeployExample', instances: '1', memory: '512', noRoute: 'false', stack: 'cflinuxfs3', timeout: '60', value: 'jenkinsConfig'], organization: 'u201915402@upc.edu.pe', pluginTimeout: '720', target: 'https://api.us-south.cf.cloud.ibm.com'
+            } 
+        }
+
+    }
+}
