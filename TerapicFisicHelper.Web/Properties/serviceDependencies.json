@@ -3,6 +3,9 @@
     "mssql1": {
       "type": "mssql",
       "connectionId": "LAPTOP-1LEAIUDF.database.windows.net"
+    },
+    "apis1": {
+      "type": "apis"
     }
   }
 }
