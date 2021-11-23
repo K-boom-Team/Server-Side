@@ -35,28 +35,49 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: SonarQubePrepare@5
+# - task: SonarQubePrepare@5
+#   inputs:
+#     SonarQube: 'SonarQube-Kboom'
+#     scannerMode: 'MSBuild'
+#     projectKey: '1a0ace25b2e8befdf451f95ebdae6e354c0e57d4'
+#     projectName: 'kboom-terapic'
+
+# - task: DotNetCoreCLI@2
+#   inputs:
+#     command: 'build'
+#     projects: '**/*.sln'
+
+# # Run Code Analysis task
+# - task: SonarQubeAnalyze@5
+    
+
+# # Publish Quality Gate Result task
+# - task: SonarQubePublish@5
+#   inputs:
+#     pollingTimeoutSec: '300'
+
+
+- task: CmdLine@2
+  displayName: 'Install Sonar Tools and Start Scanner'
   inputs:
-    SonarQube: 'SonarQube-Kboom'
-    scannerMode: 'MSBuild'
-    projectKey: '1a0ace25b2e8befdf451f95ebdae6e354c0e57d4'
-    projectName: 'kboom-terapic'
+    script: |
+      echo Installing sonarScanner tool
+      dotnet tool install --global dotnet-sonarscanner 
+
+      echo Start Scanner
+      dotnet-sonarscanner begin /k:"CreditCards" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="1a0ace25b2e8befdf451f95ebdae6e354c0e57d4"
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: '**/*.sln'
 
-# C:\agent\_work\_tasks\SonarQubePrepare_15b84ca1-b62f-4a2a-a403-89b77a063157\5.0.0\classic-sonar-scanner-msbuild\SonarScanner.MSBuild.exe begin /k:***
-# C:\agent\_work\_tasks\SonarQubePrepare_15b84ca1-b62f-4a2a-a403-89b77a063157\5.0.0\classic-sonar-scanner-msbuild\SonarScanner.MSBuild.exe end
-
-# Run Code Analysis task
-- task: SonarQubeAnalyze@5
-
-# Publish Quality Gate Result task
-- task: SonarQubePublish@5
+- task: CmdLine@2
+  displayName: 'Collect Sonar results and Upload'
   inputs:
-    pollingTimeoutSec: '300'
+    script: |
+      echo Run Sonar End
+      dotnet-sonarscanner end /d:sonar.login="1a0ace25b2e8befdf451f95ebdae6e354c0e57d4"
 
 
 - task: PublishBuildArtifacts@1
