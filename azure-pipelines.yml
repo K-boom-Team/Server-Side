@@ -51,7 +51,7 @@ steps:
 # C:\agent\_work\_tasks\SonarQubePrepare_15b84ca1-b62f-4a2a-a403-89b77a063157\5.0.0\classic-sonar-scanner-msbuild\SonarScanner.MSBuild.exe end
 
 # Run Code Analysis task
-- task: SonarQubeAnalyze@5
+#- task: SonarQubeAnalyze@5
 
 # Publish Quality Gate Result task
 - task: SonarQubePublish@5
