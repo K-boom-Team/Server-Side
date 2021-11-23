@@ -65,7 +65,7 @@ steps:
       dotnet tool install --global dotnet-sonarscanner 
 
       echo Start Scanner
-      dotnet-sonarscanner begin /k:"CreditCards" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="1a0ace25b2e8befdf451f95ebdae6e354c0e57d4"
+      dotnet-sonarscanner begin /k:"kboom-terapic" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="1a0ace25b2e8befdf451f95ebdae6e354c0e57d4"
 
 - task: DotNetCoreCLI@2
   inputs:
