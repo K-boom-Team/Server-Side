@@ -33,12 +33,20 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-# Prepare Analysis Configuration task
-- task: SonarQubePrepare@4
+# # Prepare Analysis Configuration task
+# - task: SonarQubePrepare@4
+#   inputs:
+#     SonarQube: 'http://localhost:9000'
+#     scannerMode: 'MSBuild'
+#     projectKey: '1a0ace25b2e8befdf451f95ebdae6e354c0e57d4'
+#     # projectKey: 'kboom-terapic'
+
+- task: SonarQubePrepare@5
   inputs:
-    SonarQube: 'http://localhost:9000'
+    SonarQube: 'SonarQube-Kboom'
     scannerMode: 'MSBuild'
-    projectKey: 'kboom-terapic'
+    projectKey: '1a0ace25b2e8befdf451f95ebdae6e354c0e57d4'
+    projectName: 'kboom-terapic'
 
 # Run Code Analysis task
 - task: SonarQubeAnalyze@4
