@@ -42,7 +42,13 @@ steps:
     projectKey: '1a0ace25b2e8befdf451f95ebdae6e354c0e57d4'
     projectName: 'kboom-terapic'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/*.sln'
 
+# C:\agent\_work\_tasks\SonarQubePrepare_15b84ca1-b62f-4a2a-a403-89b77a063157\5.0.0\classic-sonar-scanner-msbuild\SonarScanner.MSBuild.exe begin /k:***
+# C:\agent\_work\_tasks\SonarQubePrepare_15b84ca1-b62f-4a2a-a403-89b77a063157\5.0.0\classic-sonar-scanner-msbuild\SonarScanner.MSBuild.exe end
 
 # Run Code Analysis task
 - task: SonarQubeAnalyze@5
