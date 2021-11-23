@@ -34,13 +34,19 @@ steps:
     configuration: '$(buildConfiguration)'
 
 # Prepare Analysis Configuration task
-- task: SonarQubePreBuild@1
+- task: SonarQubePrepare@4
   inputs:
-    connectedServiceName: 'http://localhost:9000'
-    projectKey: '84e070d25847a58f1dfbf0282725f053a2a8c907'
-    projectName: 'kboom-terapic'
-    projectVersion: '1.0'
+    SonarQube: 'http://localhost:9000'
+    scannerMode: 'MSBuild'
+    projectKey: 'kboom-terapic'
 
-- task: SonarQubePostTest@1
+# Run Code Analysis task
+- task: SonarQubeAnalyze@4
+
+# Publish Quality Gate Result task
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'
+
 
 - task: PublishBuildArtifacts@1
