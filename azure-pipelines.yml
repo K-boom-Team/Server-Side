@@ -7,7 +7,8 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  name: DESKTOP-AHN19NE
+  # vmImage: 'windows-2019'
 
 variables:
   solution: '**/*.sln'
@@ -32,14 +33,6 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-# # Prepare Analysis Configuration task
-# - task: SonarQubePrepare@4
-#   inputs:
-#     SonarQube: 'http://localhost:9000'
-#     scannerMode: 'MSBuild'
-#     projectKey: '1a0ace25b2e8befdf451f95ebdae6e354c0e57d4'
-#     # projectKey: 'kboom-terapic'
 
 - task: SonarQubePrepare@5
   inputs:
