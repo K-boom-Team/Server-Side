@@ -43,10 +43,10 @@ steps:
     projectName: 'kboom-terapic'
 
 # Run Code Analysis task
-- task: SonarQubeAnalyze@4
+- task: SonarQubeAnalyze@5
 
 # Publish Quality Gate Result task
-- task: SonarQubePublish@4
+- task: SonarQubePublish@5
   inputs:
     pollingTimeoutSec: '300'
 
