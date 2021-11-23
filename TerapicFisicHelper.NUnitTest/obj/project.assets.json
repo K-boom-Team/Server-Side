@@ -4639,28 +4639,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Flores\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\ASUS TUF\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Flores\\Documents\\GitHub\\Server-Side\\TerapicFisicHelper.NUnitTest\\TerapicFisicHelper.NUnitTest.csproj",
+      "projectUniqueName": "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Server-Side\\TerapicFisicHelper.NUnitTest\\TerapicFisicHelper.NUnitTest.csproj",
       "projectName": "TerapicFisicHelper.NUnitTest",
-      "projectPath": "C:\\Users\\Flores\\Documents\\GitHub\\Server-Side\\TerapicFisicHelper.NUnitTest\\TerapicFisicHelper.NUnitTest.csproj",
-      "packagesPath": "C:\\Users\\Flores\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Flores\\Documents\\GitHub\\Server-Side\\TerapicFisicHelper.NUnitTest\\obj\\",
+      "projectPath": "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Server-Side\\TerapicFisicHelper.NUnitTest\\TerapicFisicHelper.NUnitTest.csproj",
+      "packagesPath": "C:\\Users\\ASUS TUF\\.nuget\\packages\\",
+      "outputPath": "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Server-Side\\TerapicFisicHelper.NUnitTest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Flores\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\ASUS TUF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -4673,8 +4665,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Flores\\Documents\\GitHub\\Server-Side\\TerapicFisicHelper.Entities\\TerapicFisicHelper.Entities.csproj": {
-              "projectPath": "C:\\Users\\Flores\\Documents\\GitHub\\Server-Side\\TerapicFisicHelper.Entities\\TerapicFisicHelper.Entities.csproj"
+            "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Server-Side\\TerapicFisicHelper.Entities\\TerapicFisicHelper.Entities.csproj": {
+              "projectPath": "D:\\Trabajo UPC\\Ciclo 6\\Experimentos ISW\\Trabajo\\Server-Side\\TerapicFisicHelper.Entities\\TerapicFisicHelper.Entities.csproj"
             }
           }
         }
@@ -4717,7 +4709,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
