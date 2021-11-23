@@ -36,7 +36,7 @@ steps:
 # Prepare Analysis Configuration task
 - task: SonarQubePreBuild@1
   inputs:
-    connectedServiceName: 'http:localhost:9000'
+    connectedServiceName: 'http://localhost:9000'
     projectKey: '84e070d25847a58f1dfbf0282725f053a2a8c907'
     projectName: 'kboom-terapic'
     projectVersion: '1.0'
