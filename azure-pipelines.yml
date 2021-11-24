@@ -49,7 +49,6 @@ steps:
 
 # # Run Code Analysis task
 # - task: SonarQubeAnalyze@5
-    
 
 # # Publish Quality Gate Result task
 # - task: SonarQubePublish@5
@@ -78,6 +77,5 @@ steps:
     script: |
       echo Run Sonar End
       dotnet-sonarscanner end /d:sonar.login="1a0ace25b2e8befdf451f95ebdae6e354c0e57d4"
-
 
 - task: PublishBuildArtifacts@1
